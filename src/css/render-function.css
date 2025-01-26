@@ -1,0 +1,126 @@
+body {
+    max-width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+.gallery {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    column-gap: 24px;
+    padding: 0;
+    margin: 24px auto;
+}
+
+.js-gallery-card {
+    position: relative;
+    border: 1px solid #808080;
+}
+
+.container-gallery {
+    position: relative;
+}
+
+.js-gallery-img {
+    display: block;
+    width: 360px;
+    height: 200px;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.js-gallery-info {
+    position: absolute;
+    top: 76%;
+    width: 100%;
+    background-color:#fff;
+    border-bottom: 1px solid #808080;
+}
+
+.js-gallery-stats {
+    display: inline-block;
+    text-align: center;
+    width: calc(25% - 10px);
+    padding: 4px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.js-gallery-span {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+.loading-container {
+    display: none;
+    
+}
+
+.loading-container.show {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.loader {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 64px;
+    height: 48px;
+    position: relative;
+    animation: split 1s ease-in infinite alternate;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transform: translateX(-10px);
+    background: #4e75ff;
+    opacity: 0.75;
+    backdrop-filter: blur(20px);
+}
+
+.loader::after {
+    left: auto;
+    right: 0;
+    background: #f5f5f5;
+    transform: translateX(10px);
+}
+
+@keyframes split {
+
+    0%,
+    25% {
+        width: 64px
+    }
+
+    100% {
+        width: 148px
+    }
+}
