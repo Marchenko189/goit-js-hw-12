@@ -42,4 +42,12 @@ export const createLoadingIndicator = () => {
   document.body.appendChild(loadingIndicatorHTML);
 
   return loadingIndicatorHTML;
-}
+};
+
+export const toggleLoadingIndicator = (loadingIndicator, show) => {
+    if (show) {
+        loadingIndicator.classList.add('show');
+    } else {
+        loadingIndicator.classList.remove('show');
+    }
+};
